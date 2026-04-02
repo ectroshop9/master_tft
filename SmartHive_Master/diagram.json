@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "electro shop",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 278.22,
+      "left": 100.57,
+      "attrs": {}
+    },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -56.8, "left": 57.3, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 322.2,
+      "left": 237.2,
+      "rotate": 180,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "esp:3V3.1", "red", [ "v0" ] ],
+    [ "esp:GND.2", "lcd1:GND", "black", [ "v-9.6", "h-76.8" ] ],
+    [ "lcd1:CS", "esp:10", "green", [ "v9.6", "h-48", "v9.6" ] ],
+    [ "lcd1:D/C", "esp:11", "green", [ "v28.8", "h-86.4", "v201.6" ] ],
+    [ "lcd1:MOSI", "esp:13", "green", [ "v38.4", "h-105.61", "v211.2" ] ],
+    [ "lcd1:LED", "esp:3V3.1", "green", [ "v0" ] ],
+    [ "lcd1:SCK", "esp:12", "green", [ "v19.2", "h-134.41", "v220.8" ] ],
+    [ "lcd1:MISO", "esp:14", "green", [ "v38.4", "h-96.01", "v220.8" ] ],
+    [ "esp:15", "lcd1:RST", "green", [ "h-9.65", "v-96", "h38.4" ] ],
+    [ "joystick1:GND", "esp:GND.2", "black", [ "v-38.4", "h259.2" ] ],
+    [ "esp:3V3.2", "joystick1:VCC", "green", [ "h76.75", "v-38.4", "h124.8" ] ],
+    [ "joystick1:SEL", "esp:1", "green", [ "v-19.2", "h-67.2", "v28.8", "h-9.6" ] ],
+    [ "joystick1:HORZ", "esp:2", "green", [ "v-28.8", "h-67.2", "v48" ] ],
+    [ "esp:3", "joystick1:VERT", "green", [ "v-9.6", "h124.75", "v-96", "h67.2" ] ]
+  ],
+  "dependencies": {}
+}

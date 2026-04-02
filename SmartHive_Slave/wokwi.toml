@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/SmartHive_Slave.ino.bin'
+elf = 'build/SmartHive_Slave.ino.elf'

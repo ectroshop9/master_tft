@@ -1,0 +1,1 @@
+rm -rf SmartHive_Master/build build/S3_Master && mkdir -p build/S3_Master && ./bin/arduino-cli compile --fqbn esp32:esp32:esp32s3 --build-path /tmp/arduino-build --output-dir build/S3_Master SmartHive_Master/SmartHive_Master.ino && rm -rf /tmp/arduino-build
